@@ -1,0 +1,127 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1280px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #2b283a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main {
+  max-width: 320px;
+  background: #f5f5f5;
+  border-radius: 10px;
+  padding: 3.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.app--name {
+  font-family: 'Karla';
+  font-size: 2.6rem;
+  letter-spacing: -1px;
+  color: #2b283a;
+  margin-bottom: 0.8rem;
+}
+.app--description {
+  font-family: 'Inter';
+  font-size: 1.3rem;
+  line-height: 1.3;
+  text-align: center;
+  color: #4a4e74;
+}
+.app--dice-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.8rem;
+  padding: 2.5rem 0;
+}
+.app--die {
+  width: 3.6rem;
+  height: 3.6rem;
+  font-family: 'Karla';
+  font-size: 1.3rem;
+  color: #2b283a;
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 1px 3px 0px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  transition: all 0.2s ease-out;
+}
+.app--die:active {
+  transform: scale(0.95) translateY(2px);
+  box-shadow: 0.5px 1px 2px rgba(0, 0, 0, 0.15),
+    inset 3px 3px 5px -3px rgba(0, 0, 0, 0.08);
+}
+.app-rollWrapper {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  align-items: center;
+  justify-items: center;
+}
+.app-score {
+  width: 3.5rem;
+  height: 3.5rem;
+  background-color: #59e391;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-family: 'Karla';
+  font-size: 1.3rem;
+  color: #2b283a;
+  box-shadow: inset 0 -0.05rem 0 1px #ccc, 0 0 2rem 4px #ddd;
+}
+.app--roll {
+  font-family: 'Karla';
+  font-size: 1.6rem;
+  color: #ffffff;
+  background: rgb(80, 53, 255);
+  box-shadow: 2.5px 3.2px 0px rgba(80, 53, 255, 0.2);
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  padding: 1rem 3rem;
+
+  transition: all 0.2s ease-out;
+}
+.app--roll:active {
+  transform: scale(0.96) translateY(2px);
+  box-shadow: 2px 2.5px 0px rgba(80, 53, 255, 0.18),
+    inset 4px 4px 5px -3px rgba(0, 0, 0, 0.3);
+}
+.app--counter {
+  width: 3.5rem;
+  height: 3.5rem;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-family: 'Karla';
+  font-size: 1.3rem;
+  color: #2b283a;
+  border: 1px solid #ddd;
+  box-shadow: inset 0 -0.05rem 0 1px #ccc, 0 0 2rem 4px #ddd;
+}
