@@ -35,10 +35,8 @@ main {
   justify-content: center;
 }
 .app--name {
-  font-family: 'Karla';
   font-size: 2.6rem;
   letter-spacing: -1px;
-  color: #2b283a;
   margin-bottom: 0.8rem;
 }
 .app--description {
