@@ -12,7 +12,8 @@ export default function App() {
 
   // state how many times "Roll" btn was clicked
   const [counter, setCounter] = React.useState(0);
-  const scoreArray = [];
+
+  const [scoreArray, setScoreArray] = React.useState([]);
 
   // CHECK IF ALL DICE ARE HOLD AND VALUES ARE THE SAME
   React.useEffect(() => {
@@ -20,6 +21,8 @@ export default function App() {
     const allEqual = dice.every((die) => die.value === dice[0].value); // if ALL dice are equall - return truth
     // if ALL dice are held (green) and has the same value,
     if (allEqual && allHeld) {
+      setScoreArray((prevValue) => [...prevValue, counter]);
+
       setTenzies(true);
     }
   }, [dice]);
@@ -59,6 +62,7 @@ export default function App() {
       setDice(allNewDice());
       // to reser the counter of Roll btn
       setCounter(0);
+      console.log(scoreArray);
     }
   }
 
@@ -92,7 +96,7 @@ export default function App() {
       </p>
       <div className="app--dice-container">{diceElements}</div>
       <div className="app-rollWrapper">
-        <div className="app-score"></div>
+        <div className="app-score">{Math.min(...scoreArray)}</div>
         <button className="app--roll" onClick={rollDice}>
           {tenzies ? 'New Game' : 'Roll'}
         </button>
