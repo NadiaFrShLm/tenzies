@@ -62,7 +62,6 @@ export default function App() {
       setDice(allNewDice());
       // to reser the counter of Roll btn
       setCounter(0);
-      console.log(scoreArray);
     }
   }
 
@@ -76,7 +75,7 @@ export default function App() {
     );
   }
 
-  const bestScore = scoreArray.length === 0 ? 'boo' : Math.min(...scoreArray);
+  const bestScore = scoreArray.length === 0 ? '' : Math.min(...scoreArray);
 
   const diceElements = dice.map((die) => (
     <Die
@@ -96,13 +95,23 @@ export default function App() {
         Roll until all dice are the same. Click each die to freeze it at its
         current value between rolls.
       </p>
-      <div className="app--dice-container">{diceElements}</div>
-      <div className="app-rollWrapper">
-        <div className="app-score">{bestScore}</div>
+      <div className="app--dice--container">{diceElements}</div>
+      <div className="app--rollWrapper">
+        {/* best score */}
+        <div className="app--score--container">
+          <div className="app--score">{bestScore}</div>
+          <p className="app--score--info">best score</p>
+        </div>
+
         <button className="app--roll" onClick={rollDice}>
           {tenzies ? 'New Game' : 'Roll'}
         </button>
-        <div className="app--counter">{counter}</div>
+
+        {/* player score */}
+        <div className="app--counter--container">
+          <div className="app--counter">{counter}</div>
+          <p className="app--counter--info">your score</p>
+        </div>
       </div>
     </main>
   );

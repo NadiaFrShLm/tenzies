@@ -25,6 +25,8 @@ body {
 main {
   max-width: 320px;
   background: #f5f5f5;
+  color: #2b283a;
+  font-family: 'Karla';
   border-radius: 10px;
   padding: 3.4rem;
   display: flex;
@@ -46,7 +48,7 @@ main {
   text-align: center;
   color: #4a4e74;
 }
-.app--dice-container {
+.app--dice--container {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 1.8rem;
@@ -55,9 +57,7 @@ main {
 .app--die {
   width: 3.6rem;
   height: 3.6rem;
-  font-family: 'Karla';
   font-size: 1.3rem;
-  color: #2b283a;
   background-color: #fff;
   border: none;
   cursor: pointer;
@@ -73,25 +73,39 @@ main {
   box-shadow: 0.5px 1px 2px rgba(0, 0, 0, 0.15),
     inset 3px 3px 5px -3px rgba(0, 0, 0, 0.08);
 }
-.app-rollWrapper {
+.app--rollWrapper {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
-  align-items: center;
+  align-items: flex-start;
   justify-items: center;
 }
-.app-score {
+
+.app--score--container,
+.app--counter--container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+}
+.app--score--info,
+.app--counter--info {
+  color: #4a4e74;
+}
+
+.app--score,
+.app--counter {
   width: 3.5rem;
   height: 3.5rem;
-  background-color: #59e391;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  font-family: 'Karla';
   font-size: 1.3rem;
-  color: #2b283a;
   box-shadow: inset 0 -0.05rem 0 1px #ccc, 0 0 2rem 4px #ddd;
+}
+.app--score {
+  background-color: #59e391;
 }
 .app--roll {
   font-family: 'Karla';
@@ -103,7 +117,6 @@ main {
   border: none;
   cursor: pointer;
   padding: 1rem 3rem;
-
   transition: all 0.2s ease-out;
 }
 .app--roll:active {
@@ -112,16 +125,6 @@ main {
     inset 4px 4px 5px -3px rgba(0, 0, 0, 0.3);
 }
 .app--counter {
-  width: 3.5rem;
-  height: 3.5rem;
   background-color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  font-family: 'Karla';
-  font-size: 1.3rem;
-  color: #2b283a;
   border: 1px solid #ddd;
-  box-shadow: inset 0 -0.05rem 0 1px #ccc, 0 0 2rem 4px #ddd;
 }
