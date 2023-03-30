@@ -76,6 +76,8 @@ export default function App() {
     );
   }
 
+  const bestScore = scoreArray.length === 0 ? 'boo' : Math.min(...scoreArray);
+
   const diceElements = dice.map((die) => (
     <Die
       value={die.value}
@@ -96,7 +98,7 @@ export default function App() {
       </p>
       <div className="app--dice-container">{diceElements}</div>
       <div className="app-rollWrapper">
-        <div className="app-score">{Math.min(...scoreArray)}</div>
+        <div className="app-score">{bestScore}</div>
         <button className="app--roll" onClick={rollDice}>
           {tenzies ? 'New Game' : 'Roll'}
         </button>
