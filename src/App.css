@@ -102,7 +102,10 @@ main {
   justify-content: center;
   border-radius: 50%;
   font-size: 1.3rem;
-  box-shadow: inset 0 -0.05rem 0 1px #ccc, 0 0 2rem 4px #ddd;
+  box-shadow: inset 10px 10px 15px rgba(255, 255, 255, 0.1),
+    inset -10px -10px 15px rgba(70, 70, 70, 0.09),
+    1px 2.5px 0px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(187, 187, 187, 0.7);
 }
 .app--score {
   background-color: #59e391;
@@ -126,5 +129,4 @@ main {
 }
 .app--counter {
   background-color: #fff;
-  border: 1px solid #ddd;
 }
